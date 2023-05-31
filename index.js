@@ -8,6 +8,14 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] }) // prepare cl
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
+    client.user.setStatus('idle')
+    client.user.setPresence({
+        game: {
+            name: 'with depression',
+            type: "STREAMING",
+            url: "https://www.twitch.tv/monstercat"
+        }
+    })
 })
 
 // client.on('interactionCreate', async interaction => {
